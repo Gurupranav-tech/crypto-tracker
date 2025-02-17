@@ -1,50 +1,90 @@
-# React + TypeScript + Vite
+# 📊 Gurupranav Tech Crypto Tracker
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek and powerful cryptocurrency tracking application built with **Vite**, **React**, and **TypeScript**.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 📈 **Real-time cryptocurrency data**
+- 🔍 **Search and filter** coins easily
+- 🎨 **Dark/Light mode support**
+- ⚡ **Optimized for performance** with Vite
+- 💾 **Persistent settings** using local storage
+- 🔄 **Dynamic currency conversion**
+- 📱 **Responsive design** for all devices
 
-## Expanding the ESLint configuration
+## 🛠️ Tech Stack
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Frontend**: React, TypeScript, Vite
+- **State Management**: React Context API
+- **Styling**: CSS Modules / Tailwind CSS (if applicable)
+- **API**: CoinGecko (or any other crypto API)
 
-- Configure the top-level `parserOptions` property like this:
+## 📂 Project Structure
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+└── gurupranav-tech-crypto-tracker/
+    ├── README.md
+    ├── eslint.config.js
+    ├── index.html
+    ├── package.json
+    ├── tsconfig.app.json
+    ├── tsconfig.json
+    ├── tsconfig.node.json
+    ├── vite.config.ts
+    ├── public/
+    └── src/
+        ├── App.tsx
+        ├── index.css
+        ├── main.tsx
+        ├── vite-env.d.ts
+        ├── components/
+        │   ├── Crypto.tsx
+        │   ├── Filters.tsx
+        │   ├── Modal.tsx
+        │   ├── Navbar.tsx
+        │   └── SearchBar.tsx
+        ├── contexts/
+        │   ├── CurrenciesContext.tsx
+        │   ├── SettingsContext.tsx
+        │   └── ThemeContext.tsx
+        ├── hooks/
+        │   ├── useLocalStorage.ts
+        │   └── useScreenType.ts
+        ├── lib/
+        │   └── formatter.ts
+        ├── pages/
+        │   ├── coin.tsx
+        │   └── home.tsx
+        └── types/
+            ├── coins.ts
+            └── currencies.ts
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## 🔧 Installation & Setup
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/your-username/gurupranav-tech-crypto-tracker.git
+   cd gurupranav-tech-crypto-tracker
+   ```
+2. **Install dependencies**
+   ```sh
+   npm install  # or yarn install
+   ```
+3. **Start the development server**
+   ```sh
+   npm run dev  # or yarn dev
+   ```
+4. **Build for production**
+   ```sh
+   npm run build  # or yarn build
+   ```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+## 🎨 Theming
+
+- Light/Dark mode support via `ThemeContext.tsx`
+- Custom styles using `index.css`
+
+## 📬 Contact
+
+For questions or collaboration, reach out at [gurupranav08@gmail.com](mailto:gurupranav08@gmail.com).
