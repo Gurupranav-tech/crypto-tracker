@@ -1,6 +1,10 @@
 # 📊 Gurupranav Tech Crypto Tracker
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0b6183a6-0fb3-49d8-8788-bfe4bcafbe9f/deploy-status)](https://app.netlify.com/sites/cytpo-tracker/deploys)
+
 A sleek and powerful cryptocurrency tracking application built with **Vite**, **React**, and **TypeScript**.
+
+[Live Link](https://cytpo-tracker.netlify.app/)
 
 ## 🚀 Features
 
