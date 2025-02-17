@@ -59,14 +59,14 @@ export default function Coin() {
     else if (currency === "USD") return usd;
     else return usd;
   }, [currency]);
-  const chartConfig = useMemo(
-    () => ({
+  const chartConfig = useMemo(() => {
+    return {
       type: "line",
       height: screen === "desktop" ? "auto" : "550px",
       series: [
         {
-          name: "Sales",
-          data: coinsHistory.data.prices.map((price: any) => price[1] * scale),
+          name: coinData?.name || "",
+          data: coinsHistory.data?.prices.map((price: any) => price[1] * scale),
         },
       ],
       options: {
@@ -104,7 +104,7 @@ export default function Coin() {
               fontWeight: 400,
             },
           },
-          categories: coinsHistory.data.prices.map((price: any) =>
+          categories: coinsHistory.data?.prices.map((price: any) =>
             dateFormatter.format(new Date(price[0] * 1000))
           ),
         },
@@ -139,11 +139,10 @@ export default function Coin() {
           theme,
         },
       },
-    }),
-    [theme, formatter, scale, screen]
-  );
+    };
+  }, [theme, formatter, scale, screen]);
 
-  if (coinsHistory.isLoading) return <p>Loading...</p>;
+  if (coinsHistory.isFetching) return <p>Loading...</p>;
 
   return (
     <div className="mt-4 mx-4">
@@ -181,7 +180,9 @@ export default function Coin() {
           <img src={coinData?.image} alt="Image of Crypto" />
         </div>
       </div>
-      <Chart {...(chartConfig as any)} />
+      {!coinsHistory.isLoading && chartConfig.series[0].data && (
+        <Chart {...(chartConfig as any)} />
+      )}
     </div>
   );
 }
