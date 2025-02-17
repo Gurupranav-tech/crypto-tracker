@@ -18,7 +18,7 @@ function ThemeSwitcher() {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <div className="absolute left-full top-1/2 -translate-y-2/4">
+    <div className="absolute left-full -translate-x-[110%] top-1/2 -translate-y-2/4">
       <motion.button
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
