@@ -140,7 +140,7 @@ export default function Coin() {
         },
       },
     };
-  }, [theme, formatter, scale, screen]);
+  }, [theme, formatter, scale, screen, coinsHistory, coinsHistory.data]);
 
   if (coinsHistory.isFetching) return <p>Loading...</p>;
 
