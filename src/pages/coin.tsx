@@ -167,7 +167,7 @@ export default function Coin() {
             Last 24hrs:
             <span
               className={`w-full text-end ${
-                coinData?.price_change_24h || 0 >= 0
+                (coinData?.price_change_24h || 0) >= 0
                   ? "dark:text-green-400 text-green-600"
                   : "text-red-600 dark:text-red-400"
               } ml-2`}
